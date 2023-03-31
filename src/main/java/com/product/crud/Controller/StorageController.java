@@ -163,7 +163,7 @@ public class StorageController {
             if (!(productService.isAuthorisedForPut(product_id, request.getHeader("Authorization").split(" ")[1], null))) {
                 throw new InvalidInputException("Invalid Username or Password");
             }
-            if(!storageService.isAuthorisedWithProduct(image_id,product_id)){
+            if(!storageService.isAuthorisedWithProduct(product_id,image_id)){
                 throw new InvalidInputException("Invalid Product ID for the Image");
             }
             String deleteResponse=storageService.deleteImage(image_id);
