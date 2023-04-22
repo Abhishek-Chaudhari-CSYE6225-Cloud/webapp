@@ -131,7 +131,7 @@ public class CrudRestController {
 		}
 	}
 
-	@RequestMapping(path = "/v1/user/{userId}", method = RequestMethod.GET)
+	@RequestMapping(path = "/v2/user/{userId}", method = RequestMethod.GET)
 	public ResponseEntity<?> fetchProductByID(@PathVariable Long userId, HttpServletRequest request) {
 		log.info("Inside User Controller. Getting User");
 		statsDClient.incrementCounter("endpoint.fetchProductByID.http.get");
